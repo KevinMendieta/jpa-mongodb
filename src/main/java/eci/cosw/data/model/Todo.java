@@ -2,14 +2,18 @@ package eci.cosw.data.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Document
 public class Todo {
 
-    private String description, priority, dueDate, responsible, status;
+    private String description, responsible, status;
+    private int priority;
+    private Date dueDate;
 
     public Todo() {}
 
-    public Todo(String description, String priority, String dueDate, String responsible, String status) {
+    public Todo(String description, int priority, Date dueDate, String responsible, String status) {
         this.description = description;
         this.priority = priority;
         this.dueDate = dueDate;
@@ -21,11 +25,11 @@ public class Todo {
         return description;
     }
 
-    public String getPriority() {
+    public int getPriority() {
         return priority;
     }
 
-    public String getDueDate() {
+    public Date getDueDate() {
         return dueDate;
     }
 
@@ -41,11 +45,11 @@ public class Todo {
         this.description = description;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(int priority) {
         this.priority = priority;
     }
 
-    public void setDueDate(String dueDate) {
+    public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
 

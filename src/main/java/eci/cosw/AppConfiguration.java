@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+@EnableMongoRepositories
 @Configuration
 public class AppConfiguration {
 
@@ -24,7 +26,7 @@ public class AppConfiguration {
         MongoClient mongoClient = new MongoClient(serverAddress, credential, new MongoClientOptions.Builder().build());
 
 
-        return new SimpleMongoDbFactory(mongoClient, "cosw-test");
+        return new SimpleMongoDbFactory(mongoClient, "lab_cosw");
     }
 
     @Bean

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -22,8 +23,8 @@ public class TodoRepositoryTests {
     @Before
     public void init() {
         repository.deleteAll();
-        repository.save(new Todo("do something", "5", "2018-01-01", "test@mail.com", "pending"));
-        repository.save(new Todo("do something", "5", "2018-01-01", "test@mail.com", "pending"));
+        repository.save(new Todo("do something", 5, new Date(System.currentTimeMillis()), "test@mail.com", "pending"));
+        repository.save(new Todo("do something", 5, new Date(System.currentTimeMillis()), "test@mail.com", "pending"));
     }
 
     @Test
